@@ -113,6 +113,10 @@ class User extends BaseComponent
             'roles.name' => 'Role',
         ];
 
-        return view('livewire.menu.user', compact('rows', 'columns'));
+        $columnFormats = [
+            'roles.name' => fn($row) => $row->roles->pluck('name')->join(', '),
+        ];
+
+        return view('livewire.menu.user', compact('rows', 'columns', 'columnFormats'));
     }
 }

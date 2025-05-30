@@ -24,5 +24,5 @@
         </x-form.select>
     </x-ui.modal-form>
 
-    <x-ui.table :columns="$columns" :rows="$rows" />
+    <x-ui.table :columns="$columns" :rows="$rows" :columnFormats="$columnFormats" />
 </div>

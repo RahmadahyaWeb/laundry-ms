@@ -9,9 +9,6 @@
     {
         "active": "user-management",
         "title": "Kelola Pengguna",
-        "permissions": [
-            "view user"
-        ],
         "children": [
             {
                 "title": "Pengguna",
