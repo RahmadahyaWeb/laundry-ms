@@ -6,14 +6,15 @@ use Livewire\Component;
 use App\Traits\WithDynamicPermission;
 use Illuminate\Support\Facades\DB;
 use Livewire\Features\SupportPagination\WithoutUrlPagination;
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
 class BaseComponent extends Component
 {
-    use WithDynamicPermission, WithPagination, WithoutUrlPagination;
+    use WithDynamicPermission, WithPagination, WithoutUrlPagination, WithFileUploads;
 
     public $editing;
-    public $modalTitle = 'Tambah Data';
+    public $modalTitle = 'Form';
     public $modalMethod = 'save';
 
     public function editRecord($id, array $config)
@@ -53,7 +54,6 @@ class BaseComponent extends Component
             $this->toggleCrudModal();
         } catch (\Exception $e) {
             DB::rollBack();
-            report($e);
 
             $this->showAlert($e->getMessage(), 'danger', 'Error');
         }
@@ -98,5 +98,14 @@ class BaseComponent extends Component
     public function showAlert($message = '', $type = 'success', $title = 'Sukses')
     {
         $this->dispatch('showAlert', type: $type, title: $title, message: $message);
+    }
+
+    public function format_rupiah($angka, $withPrefix = true, $decimal = 0)
+    {
+        if ($angka === null) return '-';
+
+        $formatted = number_format($angka, $decimal, ',', '.');
+
+        return $withPrefix ? 'Rp ' . $formatted : $formatted;
     }
 }

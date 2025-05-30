@@ -9,6 +9,8 @@ use Spatie\Permission\Models\Role;
 
 class User extends BaseComponent
 {
+    public $modalTitle = 'Form Pengguna';
+
     protected array $permissionMap = [
         'save' => ['edit user'],
         'edit' => ['edit user'],

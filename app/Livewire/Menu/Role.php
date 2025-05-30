@@ -8,6 +8,8 @@ use Spatie\Permission\Models\Permission;
 
 class Role extends BaseComponent
 {
+    public $modalTitle = 'Form Hak Akses Pengguna';
+
     protected array $permissionMap = [
         'save' => ['edit role'],
         'edit' => ['edit role'],
@@ -70,8 +72,6 @@ class Role extends BaseComponent
 
     public function edit($id)
     {
-        $this->modalTitle = 'Edit Hak Akses Pengguna';
-
         $this->editRecord($id, [
             'model' => \Spatie\Permission\Models\Role::class,
             'with' => ['permissions'],
