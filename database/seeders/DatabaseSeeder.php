@@ -24,14 +24,6 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user = User::firstOrCreate(
-            ['email' => 'user@user.com'],
-            [
-                'name' => 'User Dummy',
-                'password' => Hash::make('password')
-            ]
-        );
-
         $permissions = [
             'view dashboard',
             'view user',
@@ -48,17 +40,10 @@ class DatabaseSeeder extends Seeder
 
         $role = Role::firstOrCreate(['name' => 'admin']);
 
-        $staffRole = Role::firstOrCreate(['name' => 'staff']);
-
         $role->syncPermissions($permissions);
-        $staffRole->syncPermissions($permissions);
 
         if (!$admin->hasRole($role->name)) {
             $admin->assignRole($role);
-        }
-
-        if (!$user->hasRole($role->name)) {
-            $user->assignRole($staffRole);
         }
     }
 }
