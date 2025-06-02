@@ -25,5 +25,25 @@
                 ]
             }
         ]
+    },
+    {
+        "active": "master-management",
+        "title": "Kelola Master",
+        "children": [
+            {
+                "title": "Kategori Layanan",
+                "route": "master-management.service-categories",
+                "permissions": [
+                    "view service-category"
+                ]
+            },
+            {
+                "title": "Layanan",
+                "route": "master-management.services",
+                "permissions": [
+                    "view service"
+                ]
+            }
+        ]
     }
 ]

@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::vLY8zwPJVZZ4Wys2',
+            '_route' => 'generated::YA1k2FVPizB8O5yc',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::oYnIKbYmO53kYycS',
+            '_route' => 'generated::6nDdMmm7T42F7OZP',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::g2z9w05b84j0k6cI',
+            '_route' => 'generated::Gh2LcfbOC2IodFmg',
           ),
           1 => NULL,
           2 => 
@@ -165,13 +165,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/master-management/service-categories' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'master-management.service-categories',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/master-management/services' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'master-management.services',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/logout' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::TRtLaw6WShAOK0rE',
+            '_route' => 'generated::tuOAoIDTUJyJKEJ6',
           ),
           1 => NULL,
           2 => 
@@ -304,7 +344,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::vLY8zwPJVZZ4Wys2' => 
+    'generated::YA1k2FVPizB8O5yc' => 
     array (
       'methods' => 
       array (
@@ -316,7 +356,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::vLY8zwPJVZZ4Wys2',
+        'as' => 'generated::YA1k2FVPizB8O5yc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -332,7 +372,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::oYnIKbYmO53kYycS' => 
+    'generated::6nDdMmm7T42F7OZP' => 
     array (
       'methods' => 
       array (
@@ -344,7 +384,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::oYnIKbYmO53kYycS',
+        'as' => 'generated::6nDdMmm7T42F7OZP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -415,7 +455,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::g2z9w05b84j0k6cI' => 
+    'generated::Gh2LcfbOC2IodFmg' => 
     array (
       'methods' => 
       array (
@@ -443,8 +483,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'/Users/muhammadachyadirahmat/rahmadahya/laundry/vendor/laravel/framework/src/Illuminate/Foundation/Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007480000000000000000";}}',
-        'as' => 'generated::g2z9w05b84j0k6cI',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007490000000000000000";}}',
+        'as' => 'generated::Gh2LcfbOC2IodFmg',
       ),
       'fallback' => false,
       'defaults' => 
@@ -577,7 +617,85 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TRtLaw6WShAOK0rE' => 
+    'master-management.service-categories' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'master-management/service-categories',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view service-category',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\Master\\ServiceCategory@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\Master\\ServiceCategory',
+        'as' => 'master-management.service-categories',
+        'namespace' => NULL,
+        'prefix' => '/master-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'master-management.services' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'master-management/services',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view service',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\Master\\Service@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\Master\\Service',
+        'as' => 'master-management.services',
+        'namespace' => NULL,
+        'prefix' => '/master-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::tuOAoIDTUJyJKEJ6' => 
     array (
       'methods' => 
       array (
@@ -596,13 +714,13 @@ app('router')->setCompiledRoutes(
         \\Illuminate\\Support\\Facades\\Auth::logout();
 
         return \\redirect(\'/\');
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000074f0000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007500000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::TRtLaw6WShAOK0rE',
+        'as' => 'generated::tuOAoIDTUJyJKEJ6',
       ),
       'fallback' => false,
       'defaults' => 
@@ -672,7 +790,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000074c0000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000074d0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

@@ -26,12 +26,26 @@ class DatabaseSeeder extends Seeder
 
         $permissions = [
             'view dashboard',
+
+            // USER
             'view user',
             'edit user',
             'delete user',
+
+            // ROLE
             'view role',
             'edit role',
-            'delete role'
+            'delete role',
+
+            // SERVICE CATEGORY
+            'view service-category',
+            'edit service-category',
+            'delete service-category',
+
+            // SERVICE
+            'view service',
+            'edit service',
+            'delete service',
         ];
 
         foreach ($permissions as $permission) {

@@ -9,6 +9,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', Dashboard::class)->name('dashboard')->middleware('permission:view dashboard');
 
     require __DIR__ . '/user-management/user-management.php';
+    require __DIR__ . '/master-management/master-management.php';
 
     Route::get('/logout', function () {
         Auth::logout();
