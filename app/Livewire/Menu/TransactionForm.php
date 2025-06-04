@@ -238,7 +238,7 @@ class TransactionForm extends BaseComponent
 
             $this->reset([
                 'customer_id',
-                'transaction_date',
+                'sales_id',
                 'due_date',
                 'item_name',
                 'qty',

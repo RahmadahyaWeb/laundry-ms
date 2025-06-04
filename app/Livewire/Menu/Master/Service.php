@@ -155,9 +155,6 @@ class Service extends BaseComponent
             return '';
         };
 
-        // $canDelete = fn($row) => false;
-        // $canEdit = fn($row) => false;
-
         return view('livewire.menu.master.service', compact(
             'rows',
             'columns',

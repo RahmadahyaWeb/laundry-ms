@@ -8,7 +8,6 @@
     'cellClass' => null,
 ])
 
-
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -78,6 +77,11 @@
                                         $route = $action['route'] ?? null;
                                         $method = $action['method'] ?? 'GET';
                                         $target = $action['target'] ?? '_self';
+                                        $confirmMessage = $action['confirmMessage'] ?? '';
+                                        $textColor = $action['textColor'] ?? 'indigo';
+                                        $can = $action['can'] ?? fn() => true;
+
+                                        $shouldShow = is_callable($can) ? $can($row) : true;
 
                                         $href = is_callable($route)
                                             ? $route($row)
@@ -86,18 +90,20 @@
                                                 : '#');
                                     @endphp
 
-                                    <a href="{{ $href }}" target="{{ $target }}"
-                                        class="font-medium text-indigo-600 hover:underline"
-                                        @if ($method !== 'GET') onclick="event.preventDefault(); document.getElementById('form-{{ md5($href) }}').submit();" wire:navigate @endif>
-                                        {{ $label }}
-                                    </a>
-
-                                    @if ($method !== 'GET')
-                                        <form id="form-{{ md5($href) }}" action="{{ $href }}" method="POST"
-                                            style="display: none;">
-                                            @csrf
-                                            @method($method)
-                                        </form>
+                                    @if ($shouldShow)
+                                        @if ($method === 'GET')
+                                            <a href="{{ $href }}" target="{{ $target }}"
+                                                class="font-medium text-{{ $textColor }}-600 hover:underline">
+                                                {{ $label }}
+                                            </a>
+                                        @else
+                                            <a href="#"
+                                                class="font-medium text-{{ $textColor }}-600 hover:underline"
+                                                wire:click="{{ $method . '(' . $row->id . ')' }}"
+                                                wire:confirm="{{ $confirmMessage }}">
+                                                {{ $label }}
+                                            </a>
+                                        @endif
                                     @endif
                                 @endforeach
                             @endif
