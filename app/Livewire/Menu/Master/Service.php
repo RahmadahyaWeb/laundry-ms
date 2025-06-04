@@ -35,6 +35,11 @@ class Service extends BaseComponent
         $this->fetchServiceCategories();
     }
 
+    public function fetchServiceCategories()
+    {
+        $this->serviceCategoriesGroup = ServiceCategory::all();
+    }
+
     public function rules()
     {
         return [
@@ -102,11 +107,6 @@ class Service extends BaseComponent
                 'is_active' => $this->editing['is_active']
             ]);
         });
-    }
-
-    public function fetchServiceCategories()
-    {
-        $this->serviceCategoriesGroup = ServiceCategory::all();
     }
 
     public function delete($id)

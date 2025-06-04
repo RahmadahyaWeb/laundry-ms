@@ -46,6 +46,24 @@ class DatabaseSeeder extends Seeder
             'view service',
             'edit service',
             'delete service',
+
+            // CAMPAIGN
+            'view campaign',
+            'edit campaign',
+            'delete campaign',
+
+            // CUSTOMER
+            'view customer',
+            'edit customer',
+            'delete customer',
+
+            // TRANSACTION FORM
+            'view trx-form',
+
+            // TRANSACTION
+            'view trx',
+            'print trx',
+            'edit trx'
         ];
 
         foreach ($permissions as $permission) {

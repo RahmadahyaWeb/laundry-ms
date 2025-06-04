@@ -21,6 +21,17 @@ class Transaction extends Model
         'payment_status'
     ];
 
+    public static function generateTrxCode()
+    {
+        $lastCode = self::orderBy('invoice_number', 'desc')->value('invoice_number');
+
+        $lastNumber = $lastCode ? (int)str_replace('TRX-', '', $lastCode) : 0;
+
+        $nextNumber = $lastNumber + 1;
+
+        return 'TRX-' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+    }
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);

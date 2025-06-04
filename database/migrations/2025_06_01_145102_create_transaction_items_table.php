@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('service_id')->constrained()->cascadeOnDelete();
             $table->string('item_name');     // misal: Celana Jeans
             $table->float('qty');
-            $table->string('unit_type');     // kg, pcs, dll
+            $table->string('unit_type')->default('pcs');     // kg, pcs, dll
             $table->integer('unit_price');
             $table->integer('subtotal');
             $table->text('notes')->nullable();

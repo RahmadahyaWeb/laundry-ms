@@ -10,6 +10,7 @@ Route::middleware(['auth'])->group(function () {
 
     require __DIR__ . '/user-management/user-management.php';
     require __DIR__ . '/master-management/master-management.php';
+    require __DIR__ . '/trx-management/trx-management.php';
 
     Route::get('/logout', function () {
         Auth::logout();

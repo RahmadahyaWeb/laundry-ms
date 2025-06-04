@@ -32,9 +32,13 @@
                                 $rendered = $format($row);
                             } elseif ($format === 'image') {
                                 $rendered = $value
-                                    ? '<img src="' .
+                                    ? '<a href="' .
                                         asset('storage/' . $value) .
-                                        '" alt="Image" class="w-16 h-16 object-cover rounded">'
+                                        '" target="_blank">
+                                            <img src="' .
+                                        asset('storage/' . $value) .
+                                        '" alt="Image" class="w-16 h-16 object-cover rounded">
+                                       </a>'
                                     : '-';
                             } elseif ($format === 'badge') {
                                 $rendered =

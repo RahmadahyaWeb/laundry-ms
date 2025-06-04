@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YA1k2FVPizB8O5yc',
+            '_route' => 'generated::jp0k6HFLSsDZ5vLr',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::6nDdMmm7T42F7OZP',
+            '_route' => 'generated::8FM8e207AvtWHqvr',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Gh2LcfbOC2IodFmg',
+            '_route' => 'generated::qh5QTGbreZiFhtoJ',
           ),
           1 => NULL,
           2 => 
@@ -205,13 +205,93 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/master-management/campaigns' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'master-management.campaigns',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/master-management/customers' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'master-management.customers',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/transaction-management/transactions' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'transaction-management.transactions',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/transaction-management/form' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'transaction-management.form',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/logout' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::tuOAoIDTUJyJKEJ6',
+            '_route' => 'generated::z2RLlL4fXIOrNdAL',
           ),
           1 => NULL,
           2 => 
@@ -344,7 +424,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YA1k2FVPizB8O5yc' => 
+    'generated::jp0k6HFLSsDZ5vLr' => 
     array (
       'methods' => 
       array (
@@ -356,7 +436,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::YA1k2FVPizB8O5yc',
+        'as' => 'generated::jp0k6HFLSsDZ5vLr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -372,7 +452,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::6nDdMmm7T42F7OZP' => 
+    'generated::8FM8e207AvtWHqvr' => 
     array (
       'methods' => 
       array (
@@ -384,7 +464,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::6nDdMmm7T42F7OZP',
+        'as' => 'generated::8FM8e207AvtWHqvr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -455,7 +535,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Gh2LcfbOC2IodFmg' => 
+    'generated::qh5QTGbreZiFhtoJ' => 
     array (
       'methods' => 
       array (
@@ -484,7 +564,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007490000000000000000";}}',
-        'as' => 'generated::Gh2LcfbOC2IodFmg',
+        'as' => 'generated::qh5QTGbreZiFhtoJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -695,7 +775,163 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::tuOAoIDTUJyJKEJ6' => 
+    'master-management.campaigns' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'master-management/campaigns',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view campaign',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\Campaign@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\Campaign',
+        'as' => 'master-management.campaigns',
+        'namespace' => NULL,
+        'prefix' => '/master-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'master-management.customers' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'master-management/customers',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view customer',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\Customer@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\Customer',
+        'as' => 'master-management.customers',
+        'namespace' => NULL,
+        'prefix' => '/master-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'transaction-management.transactions' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'transaction-management/transactions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view trx',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\Transaction@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\Transaction',
+        'as' => 'transaction-management.transactions',
+        'namespace' => NULL,
+        'prefix' => '/transaction-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'transaction-management.form' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'transaction-management/form',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'permission:view trx-form',
+        ),
+        'uses' => 'App\\Livewire\\Menu\\TransactionForm@__invoke',
+        'controller' => 'App\\Livewire\\Menu\\TransactionForm',
+        'as' => 'transaction-management.form',
+        'namespace' => NULL,
+        'prefix' => '/transaction-management',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::z2RLlL4fXIOrNdAL' => 
     array (
       'methods' => 
       array (
@@ -720,7 +956,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::tuOAoIDTUJyJKEJ6',
+        'as' => 'generated::z2RLlL4fXIOrNdAL',
       ),
       'fallback' => false,
       'defaults' => 

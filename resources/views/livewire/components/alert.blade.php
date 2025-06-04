@@ -1,4 +1,15 @@
-<div>
+<div x-data="{
+    message: @entangle('message'),
+    show: false
+}" x-init="$watch('message', value => {
+    if (value) {
+        show = true;
+        setTimeout(() => {
+            show = false
+            message = '' // reset message ke kosong setelah hilang
+        }, 3000)
+    }
+})" x-show="show" x-transition.opacity.duration.300ms>
     @php
         $colors = [
             'info' => ['text' => 'text-blue-800', 'bg' => 'bg-blue-50'],
@@ -10,10 +21,7 @@
         $c = $colors[$type] ?? $colors['info'];
     @endphp
 
-    @if ($message)
-        <div class="p-4 mb-4 text-sm {{ $c['text'] }} rounded-lg {{ $c['bg'] }}" role="alert">
-            <span class="font-medium">{{ $title }}!</span> {{ $message }}
-        </div>
-    @endif
-
+    <div class="p-4 mb-4 text-sm {{ $c['text'] }} rounded-lg {{ $c['bg'] }} shadow" role="alert">
+        <span class="font-bold">{{ $title }}!</span> {{ $message }}
+    </div>
 </div>

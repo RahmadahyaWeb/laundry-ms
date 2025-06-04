@@ -43,6 +43,40 @@
                 "permissions": [
                     "view service"
                 ]
+            },
+            {
+                "title": "Pelanggan",
+                "route": "master-management.customers",
+                "permissions": [
+                    "view customer"
+                ]
+            },
+            {
+                "title": "Campaign",
+                "route": "master-management.campaigns",
+                "permissions": [
+                    "view campaign"
+                ]
+            }
+        ]
+    },
+    {
+        "active": "transaction-management",
+        "title": "Kelola Transaksi",
+        "children": [
+            {
+                "title": "Form Transaksi",
+                "route": "transaction-management.form",
+                "permissions": [
+                    "view trx-form"
+                ]
+            },
+            {
+                "title": "List Transaksi",
+                "route": "transaction-management.transactions",
+                "permissions": [
+                    "view trx"
+                ]
             }
         ]
     }
