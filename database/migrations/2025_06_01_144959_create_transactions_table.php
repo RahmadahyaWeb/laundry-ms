@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('due_date');
             $table->string('status'); // diterima, proses, selesai, diambil, batal
             $table->text('notes')->nullable();
+            $table->boolean('delivery_services')->default(0);
+            $table->integer('delivery_fee');
             $table->integer('total_price');
             $table->integer('discount')->default(0);
             $table->integer('paid_amount')->default(0);

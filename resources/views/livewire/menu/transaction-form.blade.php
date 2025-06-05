@@ -2,7 +2,6 @@
     <x-slot name="header">Form Transaksi</x-slot>
 
     <div class="grid grid-cols-1 md:grid-cols-10 md:gap-16 gap-6">
-        <!-- Kiri: 7 kolom -->
         <div class="col-span-7">
             <div class="grid gap-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -28,15 +27,19 @@
                         @endforeach
                     </x-form.select>
 
-                    <x-form.input id="notes" name="notes" label="Catatan" wire:model="notes" />
+                    <div class="col-span-2">
+                        <x-form.input id="notes" name="notes" label="Catatan" wire:model="notes" />
+                    </div>
+
+                    <div class="grid gap-2">
+                        <label class="block text-sm font-medium">Layanan</label>
+                        <x-form.checkbox id="delivery_services" label="Layanan antar jemput"
+                            value="{{ $delivery_services }}" wire:model.change="delivery_services" />
+                    </div>
                 </div>
 
                 @if ($customer_id && $transaction_date && $sales_id)
-                    <div class="flex items-center">
-                        <div class="flex-grow border-t border-gray-300"></div>
-                        <span class="mx-4 text-sm text-gray-500 font-semibold">Form Tambah Item</span>
-                        <div class="flex-grow border-t border-gray-300"></div>
-                    </div>
+                    <x-ui.divider title="Form tambah item" />
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <x-form.input id="item_name" name="item_name" label="Nama Item" wire:model="item_name" />
@@ -52,78 +55,24 @@
                         </x-form.select>
                     </div>
 
-                    <label class="block text-sm font-medium">Layanan Tambahan</label>
-                    @foreach ($addonsGroup as $addon)
-                        <x-form.checkbox id="addon-{{ $addon->id }}" value="{{ $addon->id }}" wire:model="addons"
-                            label="{{ $addon->name }} | Rp {{ number_format($addon->price, 0, ',', '.') }}" />
-                    @endforeach
+                    <div class="grid gap-2">
+                        <label class="block text-sm font-medium">Layanan Tambahan</label>
+                        @foreach ($addonsGroup as $addon)
+                            <x-form.checkbox id="addon-{{ $addon->id }}" value="{{ $addon->id }}"
+                                wire:model="addons"
+                                label="{{ $addon->name }} | Rp {{ number_format($addon->price, 0, ',', '.') }}" />
+                        @endforeach
+                    </div>
 
                     <x-ui.button :block="true" wire:click="addItem">Tambah Item</x-ui.button>
                 @endif
             </div>
 
-            <div class="flex items-center my-6">
-                <div class="flex-grow border-t border-gray-300"></div>
-                <span class="mx-4 text-sm text-gray-500 font-semibold">List Item</span>
-                <div class="flex-grow border-t border-gray-300"></div>
-            </div>
+            <x-ui.divider title="Daftar item" class="my-6" />
 
-            <div class="relative overflow-x-auto sm:rounded-lg">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Item
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Qty
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Layanan
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Layanan Tambahan
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Aksi
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($items as $index => $item)
-                            @php
-                                $service = $servicesGroup->firstWhere('id', $item['service_id']);
-                                $addonNames = collect($item['addons'])
-                                    ->map(function ($addonId) use ($addonsGroup) {
-                                        $addon = $addonsGroup->firstWhere('id', $addonId);
-                                        return $addon ? $addon->name : null;
-                                    })
-                                    ->filter()
-                                    ->implode(', ');
-                            @endphp
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                                <td class="px-6 py-4">{{ $item['item_name'] }}</td>
-                                <td class="px-6 py-4">{{ $item['qty'] }}</td>
-                                <td class="px-6 py-4">{{ $service?->name ?? '-' }}</td>
-                                <td class="px-6 py-4">{{ $addonNames ?: '-' }}</td>
-                                <td class="px-6 py-4">
-                                    <button type="button" wire:click="removeItem({{ $index }})"
-                                        class="text-red-600 hover:underline">Hapus</button>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="px-6 py-4 text-center text-gray-500">
-                                    Tidak ada data tersedia.
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+            <x-ui.trx-table :items="$items" :services-group="$servicesGroup" :addons-group="$addonsGroup" />
         </div>
 
-        <!-- Kanan: 3 kolom -->
         <div class="col-span-7 md:col-span-3">
             <form wire:submit.prevent="applyCampaign">
                 <div class="grid gap-4 mb-4">

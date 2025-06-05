@@ -59,6 +59,7 @@ class Transaction extends BaseComponent
     {
         $rows = ModelsTransaction::with('customer', 'user')
             ->orderBy('transaction_date', 'desc')
+            ->orderBy('invoice_number', 'desc')
             ->paginate();
 
         $columns = [

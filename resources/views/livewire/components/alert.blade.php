@@ -9,7 +9,7 @@
             message = '' // reset message ke kosong setelah hilang
         }, 3000)
     }
-})" x-show="show" x-transition.opacity.duration.300ms>
+})" x-show="show" x-transition.opacity.duration.300ms x-cloak>
     @php
         $colors = [
             'info' => ['text' => 'text-blue-800', 'bg' => 'bg-blue-50'],

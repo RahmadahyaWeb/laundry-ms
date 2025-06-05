@@ -13,3 +13,7 @@ input:focus {
 div[drawer-backdrop] {
     z-index: 10 !important;
 }
+
+[x-cloak] {
+    display: none !important;
+}

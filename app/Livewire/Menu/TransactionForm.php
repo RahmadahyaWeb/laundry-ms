@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionForm extends BaseComponent
 {
-    public $customer_id, $transaction_date, $due_date, $notes, $sales_id;
+    public $customer_id, $transaction_date, $due_date, $notes, $sales_id, $delivery_services, $deliveryFee;
 
     public $item_name, $qty = 1, $service_id, $addons = [];
 
@@ -53,6 +53,7 @@ class TransactionForm extends BaseComponent
                 'services.price'
             ])
             ->where('service_categories.name', '!=', 'addons')
+            ->where('services.is_active', 1)
             ->get();
     }
 
@@ -65,12 +66,18 @@ class TransactionForm extends BaseComponent
                 'services.price'
             ])
             ->where('service_categories.name', '=', 'addons')
+            ->where('services.is_active', 1)
             ->get();;
     }
 
     public function fetchSales()
     {
         $this->salesGroup = User::role('sales')->get();
+    }
+
+    public function updatedDeliveryServices()
+    {
+        $this->calculateTotal();
     }
 
     public function addItem()
@@ -103,25 +110,36 @@ class TransactionForm extends BaseComponent
     public function calculateTotal()
     {
         $this->subtotal = 0;
+        $updatedItems = [];
 
         foreach ($this->items as $item) {
             $service = $this->servicesGroup->firstWhere('id', $item['service_id']);
+            $itemSubtotal = 0;
 
             if ($service) {
-                $this->subtotal += $service->price * $item['qty'];
+                $itemSubtotal += $service->price * $item['qty'];
             }
 
             if (!empty($item['addons'])) {
                 foreach ($item['addons'] as $addonId) {
                     $addon = $this->addonsGroup->firstWhere('id', $addonId);
                     if ($addon) {
-                        $this->subtotal += $addon->price;
+                        $itemSubtotal += $addon->price;
                     }
                 }
             }
+
+            $item['subtotal'] = $itemSubtotal; // tambahkan ke item
+            $this->subtotal += $itemSubtotal;
+
+            $updatedItems[] = $item; // simpan ke array baru
         }
 
-        $this->total = $this->subtotal - $this->discount;
+        $this->items = $updatedItems; // overwrite array lama
+
+        $this->deliveryFee = $this->delivery_services ? 15000 : 0;
+
+        $this->total = $this->subtotal - $this->discount + $this->deliveryFee;
     }
 
     public function applyCampaign()
