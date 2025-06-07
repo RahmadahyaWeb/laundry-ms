@@ -7,7 +7,7 @@
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
                 Cuci sepatu anti ribet, kami jemput & antar langsung ke kamu.
             </p>
-            <a href="#"
+            <a href="{{ route('landing-page.transaction-form') }}"
                 class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">
                 Cuci sekarang
             </a>

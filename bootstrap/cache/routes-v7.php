@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4JOMOaAC4YANoOTO',
+            '_route' => 'generated::GBTKpmtRi6BYoP5d',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::P4Oy8uDP8zM9WN5m',
+            '_route' => 'generated::D2HxcIQ9Er4RuxW0',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8nSvVH4KYDrbOuoF',
+            '_route' => 'generated::raZg9lzi9wJBFOgW',
           ),
           1 => NULL,
           2 => 
@@ -291,7 +291,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eLjVUq0ngvYGXmUs',
+            '_route' => 'generated::EjRV1viVXY8meZLo',
           ),
           1 => NULL,
           2 => 
@@ -312,6 +312,46 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'landing-page',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/about-us' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'landing-page.about-us',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/transaction-form' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'landing-page.transaction-form',
           ),
           1 => NULL,
           2 => 
@@ -444,7 +484,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4JOMOaAC4YANoOTO' => 
+    'generated::GBTKpmtRi6BYoP5d' => 
     array (
       'methods' => 
       array (
@@ -456,7 +496,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::4JOMOaAC4YANoOTO',
+        'as' => 'generated::GBTKpmtRi6BYoP5d',
       ),
       'fallback' => false,
       'defaults' => 
@@ -472,7 +512,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::P4Oy8uDP8zM9WN5m' => 
+    'generated::D2HxcIQ9Er4RuxW0' => 
     array (
       'methods' => 
       array (
@@ -484,7 +524,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::P4Oy8uDP8zM9WN5m',
+        'as' => 'generated::D2HxcIQ9Er4RuxW0',
       ),
       'fallback' => false,
       'defaults' => 
@@ -555,7 +595,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8nSvVH4KYDrbOuoF' => 
+    'generated::raZg9lzi9wJBFOgW' => 
     array (
       'methods' => 
       array (
@@ -584,7 +624,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007490000000000000000";}}',
-        'as' => 'generated::8nSvVH4KYDrbOuoF',
+        'as' => 'generated::raZg9lzi9wJBFOgW',
       ),
       'fallback' => false,
       'defaults' => 
@@ -951,7 +991,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eLjVUq0ngvYGXmUs' => 
+    'generated::EjRV1viVXY8meZLo' => 
     array (
       'methods' => 
       array (
@@ -976,7 +1016,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::eLjVUq0ngvYGXmUs',
+        'as' => 'generated::EjRV1viVXY8meZLo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1014,6 +1054,80 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'landing-page',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'landing-page.about-us' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'about-us',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Livewire\\LandingPage\\AboutUs@__invoke',
+        'controller' => 'App\\Livewire\\LandingPage\\AboutUs',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'landing-page.about-us',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'landing-page.transaction-form' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'transaction-form',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Livewire\\LandingPage\\TrxForm@__invoke',
+        'controller' => 'App\\Livewire\\LandingPage\\TrxForm',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'landing-page.transaction-form',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1083,7 +1197,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000074e0000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000075b0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

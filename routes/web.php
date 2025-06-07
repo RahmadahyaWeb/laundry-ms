@@ -1,7 +1,9 @@
 <?php
 
 use App\Livewire\Auth\Login;
+use App\Livewire\LandingPage\AboutUs;
 use App\Livewire\LandingPage\Index;
+use App\Livewire\LandingPage\TrxForm;
 use App\Livewire\Menu\Dashboard;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +23,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/', Index::class)->name('landing-page');
+Route::get('/about-us', AboutUs::class)->name('landing-page.about-us');
+Route::get('/transaction-form', TrxForm::class)->name('landing-page.transaction-form');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('login', Login::class)->name('login');

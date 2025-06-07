@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained(); // kasir
+            $table->foreignId('user_id')->nullable()->constrained(); // kasir
             $table->string('invoice_number')->unique();
             $table->date('transaction_date');
-            $table->date('due_date');
+            $table->date('due_date')->nullable();
             $table->string('status'); // diterima, proses, selesai, diambil, batal
             $table->text('notes')->nullable();
             $table->boolean('delivery_services')->default(0);

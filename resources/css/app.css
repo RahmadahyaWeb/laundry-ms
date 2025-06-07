@@ -6,6 +6,10 @@ input:focus {
     outline: none !important;
 }
 
+textarea:focus {
+    outline: none !important;
+}
+
 .highest-z {
     z-index: 10 !important;
 }

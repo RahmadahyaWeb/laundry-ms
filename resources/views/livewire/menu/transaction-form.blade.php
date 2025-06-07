@@ -84,24 +84,24 @@
 
             <div class="w-full space-y-6">
                 <div class="flow-root">
-                    <div class="-my-3 divide-y divide-gray-200 dark:divide-gray-800">
+                    <div class="-my-3 divide-y divide-gray-200">
                         <dl class="flex items-center justify-between gap-4 py-3">
-                            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">Subtotal</dt>
-                            <dd class="text-base font-medium text-gray-900 dark:text-white">
+                            <dt class="text-base font-normal text-gray-500">Subtotal</dt>
+                            <dd class="text-base font-medium text-gray-900">
                                 {{ number_format($subtotal, 0, ',', '.') }}
                             </dd>
                         </dl>
 
                         <dl class="flex items-center justify-between gap-4 py-3">
-                            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">Diskon</dt>
-                            <dd class="text-base font-medium text-gray-900 dark:text-white">
+                            <dt class="text-base font-normal text-gray-500">Diskon</dt>
+                            <dd class="text-base font-medium text-gray-900">
                                 {{ number_format($discount, 0, ',', '.') }}
                             </dd>
                         </dl>
 
                         <dl class="flex items-center justify-between gap-4 py-3">
-                            <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-                            <dd class="text-base font-bold text-gray-900 dark:text-white">
+                            <dt class="text-base font-bold text-gray-900">Total</dt>
+                            <dd class="text-base font-bold text-gray-900">
                                 {{ number_format($total, 0, ',', '.') }}</dd>
                         </dl>
                     </div>
