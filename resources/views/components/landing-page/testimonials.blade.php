@@ -8,7 +8,7 @@
 
         <div id="controls-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden md:h-30 text-center">
+            <div class="relative min-h-30 py-8 overflow-x-hidden rounded-lg text-center px-4">
                 <!-- Item 1 -->
                 <div class="hidden duration-300" data-carousel-item>
                     <p class="text-xl font-medium text-gray-700">
