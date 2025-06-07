@@ -27,7 +27,7 @@
                         <p class="mb-2 text-gray-500">
                             Tentu. Kami hanya menggunakan bahan pembersih yang dirancang khusus untuk sepatu.
                             Semua bahan telah teruji aman untuk berbagai jenis material dan tidak merusak tekstur atau
-                            warna asli sepatu Anda.
+                            warna asli sepatu kamu.
                         </p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="py-5 border-b border-gray-200">
                         <p class="mb-2 text-gray-500">
                             Durasi tergantung pada jenis layanan yang dipilih. Untuk layanan reguler, estimasi waktu
-                            pengerjaan 3 hari. Jika Anda memilih layanan express, kami bisa menyelesaikannya
+                            pengerjaan 3 hari. Jika kamu memilih layanan express, kami bisa menyelesaikannya
                             dalam waktu 1 hari.
                         </p>
                     </div>
@@ -93,8 +93,8 @@
                 <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-3">
                     <div class="py-5 border-b border-gray-200">
                         <p class="mb-2 text-gray-500">
-                            Ya. Soklenn menyediakan layanan antar-jemput untuk area tertentu. Anda bisa mengisi form
-                            pemesanan online di sini, dan kami akan menjemput sepatu Anda sesuai jadwal penjemputan.
+                            Ya. Soklenn menyediakan layanan antar-jemput untuk area tertentu. kamu bisa mengisi form
+                            pemesanan online di sini, dan kami akan menjemput sepatu kamu sesuai jadwal penjemputan.
                         </p>
                     </div>
                 </div>

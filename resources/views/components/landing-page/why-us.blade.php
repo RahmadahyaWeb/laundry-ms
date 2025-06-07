@@ -10,7 +10,7 @@
         <div class="grid md:grid-cols-2 items-center gap-8">
             <!-- Text -->
             <div>
-                <h2 class="text-3xl font-bold text-emerald-700 mb-4">Nggak Sembarangan Sikat!</h2>
+                <h2 class="text-3xl font-bold text-emerald-700 mb-4">-- Nggak Sembarangan Sikat!</h2>
                 <p class="text-gray-600 text-justify">
                     Kami tahu rasanya punya sepatu kesayangan — yang dibeli dari hasil nabung, yang nemenin tiap langkah
                     penting, atau yang punya cerita sendiri. Makanya, kami nggak asal bersihin. Kami rawat sepatu kamu
@@ -34,7 +34,7 @@
             </div>
             <!-- Text -->
             <div>
-                <h2 class="text-3xl font-bold text-emerald-700 mb-4">Nggak Perlu Ribet, Kami yang Datang!</h2>
+                <h2 class="text-3xl font-bold text-emerald-700 mb-4">-- Nggak Perlu Ribet, Kami yang Datang!</h2>
                 <p class="text-gray-600 text-justify">
                     Lagi sibuk atau mager keluar? Tenang. Kamu tinggal pesan, kami yang jemput sepatumu, bersihin sampai
                     kinclong, terus dianter balik tanpa drama. Hemat waktu, gak ganggu jadwal, dan pastinya bikin hidup

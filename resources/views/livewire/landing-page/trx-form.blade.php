@@ -6,8 +6,8 @@
             </h2>
 
             <div class="grid grid-cols-10 gap-6">
-                <div class="col-span-10 md:col-span-7 ">
-                    <div class="grid gap-4">
+                <div class="col-span-10 md:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <x-form.input id="customer.name" name="customer.name" label="Nama Kamu"
                             wire:model.change="customer.name" />
 
@@ -19,7 +19,7 @@
 
                         <x-form.input id="notes" name="notes" label="Catatan" wire:model="notes" />
 
-                        <div class="col-span-2">
+                        <div class="md:col-span-2">
                             <label for="alamat_lengkap" class="block mb-2 text-sm font-medium text-gray-900">
                                 Alamat Lengkap
                             </label>
