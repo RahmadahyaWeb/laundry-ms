@@ -27,7 +27,7 @@
             </div>
 
             <!-- Slider controls -->
-            <div class="flex justify-center gap-x-4">
+            <div class="flex justify-center gap-x-4 mt-4">
                 <button type="button"
                     class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-50 focus:ring-2 focus:ring-emerald-500"
                     data-carousel-prev>
