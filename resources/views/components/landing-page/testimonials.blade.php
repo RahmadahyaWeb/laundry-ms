@@ -8,26 +8,26 @@
 
         <div id="controls-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div
-                class="relative h-auto py-8 overflow-hidden rounded-lg flex items-center justify-center text-center px-4">
+            <div class="relative h-56 overflow-hidden md:h-30 text-center">
                 <!-- Item 1 -->
                 <div class="hidden duration-300" data-carousel-item>
-                    <div class="text-xl font-medium text-gray-700">
+                    <p class="text-xl font-medium text-gray-700">
                         "Layanan sangat memuaskan dan cepat tanggap. Sangat direkomendasikan!"
-                        <div class="mt-2 text-sm text-gray-500">- Budi, Jakarta</div>
-                    </div>
+                    </p>
+                    <div class="mt-4 text-sm text-gray-500">- Budi, Jakarta</div>
                 </div>
+
                 <!-- Item 2 -->
                 <div class="hidden duration-300" data-carousel-item="active">
-                    <div class="text-xl font-medium text-gray-700">
+                    <p class="text-xl font-medium text-gray-700">
                         "Proses sangat mudah dan transparan. Saya akan menggunakan lagi!"
-                        <div class="mt-2 text-sm text-gray-500">- Sari, Bandung</div>
-                    </div>
+                    </p>
+                    <div class="mt-4 text-sm text-gray-500">- Sari, Bandung</div>
                 </div>
             </div>
 
             <!-- Slider controls -->
-            <div class="flex justify-center gap-x-4 mt-4">
+            <div class="flex justify-center gap-x-4">
                 <button type="button"
                     class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-50 focus:ring-2 focus:ring-emerald-500"
                     data-carousel-prev>
