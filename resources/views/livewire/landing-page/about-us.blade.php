@@ -26,8 +26,8 @@
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
-                <img class="w-full rounded-lg" src="{{ asset('landing-page/soklenn.png') }}" alt="office content 1">
-                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="{{ asset('landing-page/soklenn.png') }}"
+                <img class="w-full rounded-lg" src="{{ asset('landing-page/rahmat-hekal.jpeg') }}" alt="office content 1">
+                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="{{ asset('landing-page/rahmat-hekal-2.jpeg') }}"
                     alt="office content 2">
             </div>
         </div>
