@@ -40,8 +40,10 @@
                     </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold">Cuci Sepatu</h3>
-                <p class="text-gray-500">Plan it, create it, launch it. Collaborate seamlessly with
-                    all the organization and hit your marketing goals every month with our marketing plan.</p>
+                <p class="text-gray-500">
+                    Sepatu kamu belepotan? Tenang, kami siap bikin sepatumu kinclong lagi dan siap diajak
+                    jalan-jalan!
+                </p>
             </div>
 
             <div>
@@ -90,8 +92,10 @@
                     </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold">Cuci Sandal</h3>
-                <p class="text-gray-500">Protect your organization, devices and stay compliant with
-                    our structured workflows and custom permissions made for you.</p>
+                <p class="text-gray-500">
+                    Sandal favorit mulai kusam? Kami bantu bersihin sampai bersih, wangi, dan nyaman lagi dipakai
+                    kemana-mana.
+                </p>
             </div>
 
             <div>
@@ -152,8 +156,9 @@
                     </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold">Cuci Boot</h3>
-                <p class="text-gray-500">Auto-assign tasks, send Slack messages, and much more. Now
-                    power up with hundreds of new templates to help you get started.</p>
+                <p class="text-gray-500">
+                    Boot penuh lumpur abis naik gunung? Serahin aja ke kami, nanti balik lagi dalam kondisi siap tempur!
+                </p>
             </div>
         </div>
     </div>
