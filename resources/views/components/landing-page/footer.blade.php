@@ -9,12 +9,12 @@
                     <a href="#services" class="hover:underline me-4 md:me-6">Layanan</a>
                 </li>
                 <li>
-                    <a href="{{ route('landing-page.transaction-form') }}" class="hover:underline me-4 md:me-6"
-                        wire:navigate>Form
+                    <a href="{{ route('landing-page.transaction-form') }}" class="hover:underline me-4 md:me-6">Form
                         Pemesanan Online</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline">Hubungi Kami</a>
+                    <a href="https://wa.me/6288705576350?text=Min%2C%20mau%20cuci%20sepatu"
+                        class="hover:underline">Hubungi Kami</a>
                 </li>
             </ul>
         </div>

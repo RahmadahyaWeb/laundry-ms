@@ -43,8 +43,8 @@
                         <ul class="py-1" role="none">
                             <li>
                                 <a href="{{ route('dashboard') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
-                                    wire:navigate>Dashboard</a>
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Dashboard</a>
                             </li>
                             <li>
                                 <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -82,8 +82,7 @@
                         <li>
                             <a href="{{ route($menu['route']) }}"
                                 class="flex items-center py-2 rounded-lg group
-                        {{ request()->routeIs($menu['route']) ? 'text-zinc-800 bg-gray-100' : 'text-gray-900 hover:bg-gray-100 ' }}"
-                                wire:navigate>
+                        {{ request()->routeIs($menu['route']) ? 'text-zinc-800 bg-gray-100' : 'text-gray-900 hover:bg-gray-100 ' }}">
                                 <span class="ms-3">{{ $menu['title'] }}</span>
                             </a>
                         </li>
@@ -108,8 +107,7 @@
                                         <li>
                                             <a href="{{ route($child['route']) }}"
                                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group 
-                                        {{ request()->routeIs($child['route'] . '*') ? 'text-zinc-800 bg-gray-100' : 'text-gray-900 hover:bg-gray-100 ' }}"
-                                                wire:navigate>
+                                        {{ request()->routeIs($child['route'] . '*') ? 'text-zinc-800 bg-gray-100' : 'text-gray-900 hover:bg-gray-100 ' }}">
                                                 {{ $child['title'] }}
                                             </a>
                                         </li>

@@ -5,6 +5,7 @@ namespace App\Livewire\LandingPage;
 use App\Livewire\BaseComponent;
 use App\Models\Campaign;
 use App\Models\Service;
+use App\Models\ServiceCategory;
 use App\Models\Transaction;
 use App\Models\TransactionItem;
 use Carbon\Carbon;
@@ -16,13 +17,13 @@ class TrxForm extends BaseComponent
 {
     public $customer_id, $transaction_date, $due_date, $notes, $sales_id, $delivery_services, $deliveryFee, $invoice_number;
 
-    public $item_name, $qty = 1, $service_id, $addons = [];
+    public $item_name, $qty = 1, $service_id, $addons = [], $service_category_id;
 
     public $campaignCode, $campaign;
 
     public $items = [];
 
-    public $customersGroup, $servicesGroup, $addonsGroup, $salesGroup;
+    public $customersGroup, $servicesGroup, $addonsGroup, $salesGroup, $categoriesGroup;
 
     public $subtotal = 0;
     public $total = 0;
@@ -33,11 +34,17 @@ class TrxForm extends BaseComponent
         $this->transaction_date = Carbon::today()->format('Y-m-d');
         $this->invoice_number = Transaction::generateTrxCode();
 
-        $this->fetchServices();
+        $this->fetchCategories();
         $this->fetchAddons();
+        $this->servicesGroup = collect();
     }
 
-    public function fetchServices()
+    public function fetchCategories()
+    {
+        $this->categoriesGroup = ServiceCategory::where('name', '!=', 'addons')->get();
+    }
+
+    public function fetchServices($service_category_id)
     {
         $this->servicesGroup = Service::join('service_categories', 'service_categories.id', '=', 'services.service_category_id')
             ->select([
@@ -45,6 +52,7 @@ class TrxForm extends BaseComponent
                 'services.name',
                 'services.price'
             ])
+            ->where('service_category_id', $service_category_id)
             ->where('service_categories.name', '!=', 'addons')
             ->where('services.is_active', 1)
             ->get();
@@ -68,24 +76,31 @@ class TrxForm extends BaseComponent
         $this->calculateTotal();
     }
 
+    public function updatedServiceCategoryId()
+    {
+        $this->fetchServices($this->service_category_id);
+    }
+
     public function addItem()
     {
         $this->validate([
             'item_name' => 'required|string',
             'qty' => 'required|integer|min:1',
             'service_id' => 'required|exists:services,id',
+            'service_category_id' => 'required|exists:service_categories,id',
         ]);
 
         $this->items[] = [
             'item_name' => $this->item_name,
             'qty' => $this->qty,
             'service_id' => $this->service_id,
-            'addons' => $this->addons
+            'addons' => $this->addons,
+            'service_category_id' => $this->service_category_id
         ];
 
         $this->calculateTotal();
 
-        $this->reset(['item_name', 'qty', 'service_id', 'addons']);
+        $this->reset(['item_name', 'qty', 'service_id', 'addons', 'service_category_id']);
     }
 
     public function removeItem($index)
@@ -238,6 +253,7 @@ class TrxForm extends BaseComponent
             $this->reset([
                 'item_name',
                 'qty',
+                'service_category_id',
                 'service_id',
                 'addons',
                 'items',

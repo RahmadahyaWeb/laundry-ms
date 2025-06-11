@@ -49,7 +49,7 @@
                     <div class="py-5 border-b border-gray-200">
                         <p class="mb-2 text-gray-500">
                             Gampang banget! Kamu bisa langsung datang ke outlet kami, atau isi form pemesanan online <a
-                                href="{{ route('landing-page.transaction-form') }}" wire:navigate>di sini</a>. Pilih
+                                href="{{ route('landing-page.transaction-form') }}">di sini</a>. Pilih
                             layanan,
                             isi data
                             sepatu, lalu bayar.
@@ -97,7 +97,7 @@
                     <div class="py-5 border-b border-gray-200">
                         <p class="mb-2 text-gray-500">
                             Ya. Soklenn menyediakan layanan antar-jemput untuk area tertentu. kamu bisa mengisi form
-                            pemesanan online <a href="{{ route('landing-page.transaction-form') }}" wire:navigate>di
+                            pemesanan online <a href="{{ route('landing-page.transaction-form') }}">di
                                 sini</a>, dan kami akan menjemput sepatu kamu sesuai jadwal penjemputan.
                         </p>
                     </div>

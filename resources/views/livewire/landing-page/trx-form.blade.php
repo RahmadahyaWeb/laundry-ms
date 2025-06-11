@@ -5,6 +5,8 @@
                 Form Pemesanan Online
             </h2>
 
+            <livewire:components.alert />
+
             <div class="grid grid-cols-10 gap-6">
                 <div class="col-span-10 md:col-span-7">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -37,10 +39,19 @@
 
                     <x-ui.divider title="Form tambah item" class="my-6" />
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <x-form.input id="item_name" name="item_name" label="Nama Item" wire:model="item_name" />
 
                         <x-form.input type="number" id="qty" name="qty" label="Qty" wire:model="qty" />
+
+                        <x-form.select id="service_category_id" name="service_category_id" label="Kategori"
+                            wire:model.change="service_category_id">
+                            <option value="">Pilih Kategori</option>
+
+                            @foreach ($categoriesGroup as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </x-form.select>
 
                         <x-form.select id="service_id" name="service_id" label="Layanan" wire:model="service_id">
                             <option value="">Pilih Layanan</option>
@@ -64,7 +75,7 @@
                         Tambah item
                     </x-ui.button>
 
-                    <x-ui.trx-table :items="$items" :services-group="$servicesGroup" :addons-group="$addonsGroup" />
+                    <x-ui.trx-table :items="$items" :services-group="$servicesGroup" :addons-group="$addonsGroup" :categories-group="$categoriesGroup" />
                 </div>
 
                 <div class="col-span-10 md:col-span-3">
