@@ -78,6 +78,7 @@ class TrxForm extends BaseComponent
 
     public function updatedServiceCategoryId()
     {
+        $this->reset('service_id');
         $this->fetchServices($this->service_category_id);
     }
 
