@@ -1,5 +1,5 @@
-<div class="flex gap-8 py-8 px-4 mx-auto max-w-screen-xl">
-    <div class="w-2/3 shadow-md p-6 rounded-lg">
+<div class="flex flex-col md:flex-row gap-8 py-8 px-4 mx-auto max-w-screen-xl">
+    <div class="md:w-2/3 w-full shadow-md p-6 rounded-lg">
         <h1 class="text-xl font-bold mb-4">Detail Transaksi</h1>
 
         {{-- Info Transaksi --}}
@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    <div class="w-1/3 self-start shadow-md p-6 rounded-lg space-y-4">
+    <div class="md:w-1/3 w-full self-start shadow-md p-6 rounded-lg space-y-4">
         <h2 class="text-lg font-bold mb-2">Pembayaran Bisa Dilakukan ke</h2>
 
         <div class="border border-2 p-4 rounded-md">
