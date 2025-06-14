@@ -18,7 +18,8 @@ class Transaction extends Model
         'discount',
         'paid_amount',
         'change',
-        'payment_status'
+        'payment_status',
+        'delivery_fee'
     ];
 
     public static function generateTrxCode()

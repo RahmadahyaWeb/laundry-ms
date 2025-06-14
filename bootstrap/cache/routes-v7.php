@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::GBTKpmtRi6BYoP5d',
+            '_route' => 'generated::O8ScnBH4pZ5mVnMm',
           ),
           1 => NULL,
           2 => 
@@ -52,7 +52,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::D2HxcIQ9Er4RuxW0',
+            '_route' => 'generated::eVpTjT9jvJzjIYlv',
           ),
           1 => NULL,
           2 => 
@@ -91,7 +91,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::raZg9lzi9wJBFOgW',
+            '_route' => 'generated::bejoLzvgFalVrotj',
           ),
           1 => NULL,
           2 => 
@@ -291,7 +291,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::EjRV1viVXY8meZLo',
+            '_route' => 'generated::3unKSlwlm8xMi6Jy',
           ),
           1 => NULL,
           2 => 
@@ -388,7 +388,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/storage/(.*)(*:59))/?$}sDu',
+      0 => '{^(?|/livewire/preview\\-file/([^/]++)(*:39)|/payment\\-form/([^/]++)(*:69)|/storage/(.*)(*:89))/?$}sDu',
     ),
     3 => 
     array (
@@ -415,7 +415,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      59 => 
+      69 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'landing-page.payment-form',
+          ),
+          1 => 
+          array (
+            0 => 'invoice_number',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      89 => 
       array (
         0 => 
         array (
@@ -484,7 +507,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::GBTKpmtRi6BYoP5d' => 
+    'generated::O8ScnBH4pZ5mVnMm' => 
     array (
       'methods' => 
       array (
@@ -496,7 +519,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile',
-        'as' => 'generated::GBTKpmtRi6BYoP5d',
+        'as' => 'generated::O8ScnBH4pZ5mVnMm',
       ),
       'fallback' => false,
       'defaults' => 
@@ -512,7 +535,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::D2HxcIQ9Er4RuxW0' => 
+    'generated::eVpTjT9jvJzjIYlv' => 
     array (
       'methods' => 
       array (
@@ -524,7 +547,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
         'controller' => 'Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps',
-        'as' => 'generated::D2HxcIQ9Er4RuxW0',
+        'as' => 'generated::eVpTjT9jvJzjIYlv',
       ),
       'fallback' => false,
       'defaults' => 
@@ -595,7 +618,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::raZg9lzi9wJBFOgW' => 
+    'generated::bejoLzvgFalVrotj' => 
     array (
       'methods' => 
       array (
@@ -624,7 +647,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000007490000000000000000";}}',
-        'as' => 'generated::raZg9lzi9wJBFOgW',
+        'as' => 'generated::bejoLzvgFalVrotj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -991,7 +1014,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::EjRV1viVXY8meZLo' => 
+    'generated::3unKSlwlm8xMi6Jy' => 
     array (
       'methods' => 
       array (
@@ -1016,7 +1039,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::EjRV1viVXY8meZLo',
+        'as' => 'generated::3unKSlwlm8xMi6Jy',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1143,6 +1166,43 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'landing-page.payment-form' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'payment-form/{invoice_number}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Livewire\\LandingPage\\PaymentForm@__invoke',
+        'controller' => 'App\\Livewire\\LandingPage\\PaymentForm',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'landing-page.payment-form',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -1197,7 +1257,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000075b0000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000000000075c0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

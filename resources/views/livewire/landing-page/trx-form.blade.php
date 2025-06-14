@@ -22,12 +22,8 @@
                         <x-form.input id="notes" name="notes" label="Catatan" wire:model="notes" />
 
                         <div class="md:col-span-2">
-                            <label for="alamat_lengkap" class="block mb-2 text-sm font-medium text-gray-900">
-                                Alamat Lengkap
-                            </label>
-
-                            <textarea id="alamat_lengkap" rows="4"
-                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:border-blue-500"></textarea>
+                            <x-form.input id="customer.address" name="customer.address" label="Alamat"
+                                wire:model="customer.address" />
                         </div>
 
                         <div class="grid gap-2">

@@ -718,6 +718,10 @@
         'channel' => NULL,
       ),
     ),
+    'whatsapp' => 
+    array (
+      'token' => 'xtSFRa4suVMtSuriUwUE',
+    ),
   ),
   'session' => 
   array (

@@ -4,6 +4,7 @@ namespace App\Livewire\LandingPage;
 
 use App\Livewire\BaseComponent;
 use App\Models\Campaign;
+use App\Models\Customer;
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use App\Models\Transaction;
@@ -11,11 +12,14 @@ use App\Models\TransactionItem;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
+use App\Services\WhatsappService;
+use Illuminate\Support\Facades\Crypt;
 
 #[Layout('components.layouts.landing-page')]
 class TrxForm extends BaseComponent
 {
-    public $customer_id, $transaction_date, $due_date, $notes, $sales_id, $delivery_services, $deliveryFee, $invoice_number;
+
+    public $transaction_date, $due_date, $notes, $sales_id, $delivery_services, $deliveryFee, $invoice_number;
 
     public $item_name, $qty = 1, $service_id, $addons = [], $service_category_id;
 
@@ -28,6 +32,12 @@ class TrxForm extends BaseComponent
     public $subtotal = 0;
     public $total = 0;
     public $discount = 0;
+
+    public $customer = [
+        'name' => '',
+        'phone' => '',
+        'address' => ''
+    ];
 
     public function mount()
     {
@@ -185,6 +195,9 @@ class TrxForm extends BaseComponent
     {
         $this->validate([
             'transaction_date' => 'required|date',
+            'customer.name' => 'required',
+            'customer.phone' => 'required',
+            'customer.address' => 'required'
         ]);
 
         if (empty($this->items)) {
@@ -195,12 +208,21 @@ class TrxForm extends BaseComponent
         DB::beginTransaction();
 
         try {
+            $normalizedPhone = $this->convertToLocalNumber($this->customer['phone']);
+
+            $customer = Customer::create([
+                'name' => $this->customer['name'],
+                'phone' => $normalizedPhone,
+                'address' => $this->customer['address'],
+            ]);
+
             $transaction = Transaction::create([
                 'invoice_number' => Transaction::generateTrxCode(),
-                'customer_id' => $this->customer_id,
+                'customer_id' => $customer->id,
                 'transaction_date' => $this->transaction_date,
                 'subtotal' => $this->subtotal,
                 'discount' => $this->discount,
+                'delivery_fee' => $this->deliveryFee,
                 'total_price' => $this->total,
                 'campaign_id' => $this->campaign?->id,
                 'payment_status' => 'belum bayar',
@@ -249,26 +271,57 @@ class TrxForm extends BaseComponent
 
             DB::commit();
 
-            // $this->showAlert('Transaksi berhasil dibuat.');
+            $encryptedInvoice = Crypt::encryptString($transaction->invoice_number);
+            $invoiceUrl = route('landing-page.payment-form', $encryptedInvoice);
 
-            $this->reset([
-                'item_name',
-                'qty',
-                'service_category_id',
-                'service_id',
-                'addons',
-                'items',
-                'campaignCode',
-                'campaign',
-                'subtotal',
-                'discount',
-                'total',
-            ]);
+            $message = "Terima kasih! Transaksi Anda berhasil.\nNo Transaksi: {$transaction->invoice_number}\n\nLihat detail transaksi:\n{$invoiceUrl}";
+
+            $whatsapp = new WhatsappService();
+            $whatsapp->sendMessage($normalizedPhone, $message);
+
+            $this->showAlert('Transaksi berhasil dibuat.');
+            $this->resetTrxForm();
+
+            $this->redirectRoute('landing-page.payment-form', $encryptedInvoice);
         } catch (\Exception $e) {
             DB::rollBack();
 
             $this->showAlert($e->getMessage(), 'danger', 'Error');
         }
+    }
+
+    public function resetTrxForm()
+    {
+        $this->reset([
+            'item_name',
+            'qty',
+            'service_category_id',
+            'service_id',
+            'addons',
+            'items',
+            'campaignCode',
+            'campaign',
+            'subtotal',
+            'discount',
+            'total',
+            'customer',
+            'customer',
+            'customer',
+            'notes',
+        ]);
+    }
+
+    function convertToLocalNumber($phone)
+    {
+        // Hilangkan semua karakter non-angka
+        $phone = preg_replace('/[^0-9]/', '', $phone);
+
+        // Jika diawali dengan 628, ubah ke 08
+        if (substr($phone, 0, 3) === '628') {
+            $phone = '08' . substr($phone, 3);
+        }
+
+        return $phone;
     }
 
     public function render()
