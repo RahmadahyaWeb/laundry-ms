@@ -4,6 +4,7 @@ namespace App\Livewire\Menu;
 
 use App\Livewire\BaseComponent;
 use App\Models\Transaction as ModelsTransaction;
+use Illuminate\Support\Facades\Crypt;
 
 class Transaction extends BaseComponent
 {
@@ -18,6 +19,7 @@ class Transaction extends BaseComponent
     public $editing =  [
         'id' => '',
         'status' => '',
+        'payment_status' => '',
     ];
 
     public function edit($id)
@@ -29,6 +31,7 @@ class Transaction extends BaseComponent
                 return [
                     'id' => $data->id,
                     'status' => $data->status,
+                    'payment_status' => $data->payment_status
                 ];
             }
         ]);
@@ -40,7 +43,8 @@ class Transaction extends BaseComponent
             $transaction = ModelsTransaction::findOrFail($this->editing['id']);
 
             $transaction->update([
-                'status' => $this->editing['status']
+                'status' => $this->editing['status'],
+                'payment_status' => $this->editing['payment_status']
             ]);
         });
     }
@@ -108,6 +112,14 @@ class Transaction extends BaseComponent
         };
 
         $actions = [
+            [
+                'label' => 'Detail',
+                'route' => fn($row) => route('landing-page.payment-form', [
+                    'invoice_number' => Crypt::encryptString($row->invoice_number)
+                ]),
+                'target' => '_blank',
+                'can' => fn($row) => true,
+            ],
             [
                 'label' => 'Batal',
                 'method' => 'cancelTrx',
