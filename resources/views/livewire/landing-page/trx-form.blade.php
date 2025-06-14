@@ -49,6 +49,10 @@
                             @endforeach
                         </x-form.select>
 
+                        <p class="text-sm text-gray-500 mt-1" wire:loading wire:target="service_category_id">
+                            Memuat layanan...
+                        </p>
+
                         <x-form.select id="service_id" name="service_id" label="Layanan" wire:model="service_id">
                             <option value="">Pilih Layanan</option>
 
@@ -67,8 +71,10 @@
                         </div>
                     </div>
 
-                    <x-ui.button color="emerald" class="mt-6 mb-8" :block="true" wire:click="addItem">
-                        Tambah item
+                    <x-ui.button color="emerald" class="mt-6 mb-8" :block="true" wire:click="addItem"
+                        wire:loading.attr="disabled">
+                        <span wire:loading wire:target="addItem">Menambahkan...</span>
+                        <span wire:loading.remove wire:target="addItem">Tambah item</span>
                     </x-ui.button>
 
                     <x-ui.trx-table :items="$items" :services-group="$servicesGroup" :addons-group="$addonsGroup" :categories-group="$categoriesGroup" />
@@ -118,8 +124,10 @@
                         </div>
 
                         <div class="space-y-3">
-                            <x-ui.button color="emerald" :block="true" wire:click="save">
-                                Lanjutkan ke Pembayaran
+                            <x-ui.button color="emerald" :block="true" wire:click="save"
+                                wire:loading.attr="disabled">
+                                <span wire:loading wire:target="save">Menyimpan...</span>
+                                <span wire:loading.remove wire:target="save">Lanjutkan ke Pembayaran</span>
                             </x-ui.button>
                         </div>
                     </div>
