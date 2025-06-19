@@ -181,10 +181,11 @@ class TrxForm extends BaseComponent
         }
 
         $this->campaign = $campaign;
+
         if ($campaign->type === 'percentage') {
-            $this->discount = round($this->total * ($campaign->value / 100), 2);
+            $this->discount = round($this->subtotal * ($campaign->value / 100), 2);
         } else {
-            $this->discount = min($campaign->value, $this->total);
+            $this->discount = min($campaign->value, $this->subtotal);
         }
 
         $this->total = $this->total - $this->discount;
